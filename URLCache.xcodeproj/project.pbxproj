@@ -12,8 +12,10 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		842DB5B70E2280100088947D /* URLCacheConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 842DB5B60E2280100088947D /* URLCacheConnection.m */; };
+		8449F1271141975900C23724 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449F1251141975900C23724 /* MainView.xib */; };
 		8491FC230E255BB70064C040 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491FC220E255BB70064C040 /* CoreGraphics.framework */; };
 		84963BE10E2BF6E700C6D3C9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 84963BE00E2BF6E700C6D3C9 /* Default.png */; };
+		849FA879115978BB006D795F /* URLCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849FA878115978BB006D795F /* URLCacheController.m */; };
 		84DC18800E0730DA00516C1D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DC187C0E0730DA00516C1D /* MainWindow.xib */; };
 		84DC18860E0730F300516C1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84DC18840E0730F300516C1D /* InfoPlist.strings */; };
 		84E8E3960E353A230040B308 /* URLCacheAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E8E3950E353A230040B308 /* URLCacheAlert.m */; };
@@ -32,8 +34,11 @@
 		32CA4F630368D1EE00C91783 /* URLCache_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCache_Prefix.pch; sourceTree = "<group>"; };
 		842DB5B50E2280100088947D /* URLCacheConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheConnection.h; sourceTree = "<group>"; };
 		842DB5B60E2280100088947D /* URLCacheConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCacheConnection.m; sourceTree = "<group>"; };
+		8449F1261141975900C23724 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainView.xib; sourceTree = "<group>"; };
 		8491FC220E255BB70064C040 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		84963BE00E2BF6E700C6D3C9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Default.png; sourceTree = "<group>"; };
+		849FA877115978BB006D795F /* URLCacheController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheController.h; sourceTree = "<group>"; };
+		849FA878115978BB006D795F /* URLCacheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCacheController.m; sourceTree = "<group>"; };
 		84DC187D0E0730DA00516C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		84DC18850E0730F300516C1D /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84E8E3460E3535980040B308 /* URLCacheAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCacheAlert.h; sourceTree = "<group>"; };
@@ -62,6 +67,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				849FA877115978BB006D795F /* URLCacheController.h */,
+				849FA878115978BB006D795F /* URLCacheController.m */,
 				84E8E3460E3535980040B308 /* URLCacheAlert.h */,
 				84E8E3950E353A230040B308 /* URLCacheAlert.m */,
 				1D3623240D0F684500981E51 /* URLCacheAppDelegate.h */,
@@ -109,6 +116,7 @@
 				84F2147B0E09879C00BD3FD2 /* URLCache.plist */,
 				84DC18840E0730F300516C1D /* InfoPlist.strings */,
 				84DC187C0E0730DA00516C1D /* MainWindow.xib */,
+				8449F1251141975900C23724 /* MainView.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				84E8E3D80E3546760040B308 /* Localizable.strings */,
 			);
@@ -189,6 +197,7 @@
 				84F216EE0E0C639400BD3FD2 /* Icon.png in Resources */,
 				84963BE10E2BF6E700C6D3C9 /* Default.png in Resources */,
 				84E8E3DA0E3546760040B308 /* Localizable.strings in Resources */,
+				8449F1271141975900C23724 /* MainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,12 +212,21 @@
 				1D3623260D0F684500981E51 /* URLCacheAppDelegate.m in Sources */,
 				842DB5B70E2280100088947D /* URLCacheConnection.m in Sources */,
 				84E8E3960E353A230040B308 /* URLCacheAlert.m in Sources */,
+				849FA879115978BB006D795F /* URLCacheController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		8449F1251141975900C23724 /* MainView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8449F1261141975900C23724 /* en */,
+			);
+			name = MainView.xib;
+			sourceTree = "<group>";
+		};
 		84DC187C0E0730DA00516C1D /* MainWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -258,6 +276,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = URLCache_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = URLCache;
 			};
 			name = Release;
@@ -270,9 +289,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -284,8 +304,9 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};

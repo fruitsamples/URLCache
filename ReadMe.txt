@@ -47,13 +47,13 @@ http://www.osei.noaa.gov/
 BUILD REQUIREMENTS
 ==================
 
-Mac OS X 10.5.3, Xcode 3.1, iPhone OS 2.0
+iOS 4.0 SDK
 
 
 RUNTIME REQUIREMENTS
 ====================
 
-Mac OS X 10.5.3, iPhone OS 2.0
+iOS 3.2
 
 
 PACKAGING LIST
@@ -62,7 +62,12 @@ PACKAGING LIST
 URLCacheAppDelegate.h
 URLCacheAppDelegate.m
 
-Acts as the delegate for the UIApplication instance. In the applicationDidFinishLaunching: method, it embeds the application's UI in the main window. Contains the controller logic for the view that contains the application's UI. Contains the controller logic for the application. This object manages the different features of the application.
+Acts as the delegate for the UIApplication instance. In the applicationDidFinishLaunching: method, it creates the application's view controller and embeds its view in the application window.
+
+URLCacheController.h
+URLCacheController.h
+
+This is the custom view controller class for the view that contains the application UI. In the viewDidLoad: method, it embeds the application's UI in the main window. Contains the controller logic for the view that contains the application's UI.
 
 URLCacheConnection.h
 URLCacheConnection.m
@@ -74,14 +79,15 @@ URLCacheAlert.m
 
 Utility functions for displaying UIAlertView alerts.
 
-UIBarButtonSlideLeft.png
-UIBarButtonSlideRight.png
+Default.png
+Icon.png
 
-Images for toolbar buttons.
+Application images.
 
 MainWindow.xib
+MainView.xib
 
-Nib file that implements the UI including the toolbar.
+Nib files that contain the application UI including the toolbar.
 
 Localizable.strings
 
@@ -99,6 +105,7 @@ CHANGES FROM PREVIOUS VERSIONS
 ==============================
 
 Version 1.0 - First release.
+Version 1.1 - Fixed several minor bugs. Upgraded project to build with iOS 4.0 SDK.
 
 
-Copyright (C) 2008 Apple Inc. All rights reserved.
+Copyright (C) 2008-2010 Apple Inc. All rights reserved.

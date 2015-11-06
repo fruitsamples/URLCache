@@ -1,16 +1,16 @@
 /*
- 
- File: URLCacheAppDelegate.m
- Abstract: The application delegate for the URLCache sample.
- 
+
+ File: URLCacheController.h
+ Abstract: The view controller for the URLCache sample.
+
  Version: 1.1
- 
+
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple Inc.
  ("Apple") in consideration of your agreement to the following terms, and your
  use, installation, modification or redistribution of this Apple software
  constitutes acceptance of these terms.  If you do not agree with these terms,
  please do not use, install, modify or redistribute this Apple software.
- 
+
  In consideration of your agreement to abide by the following terms, and subject
  to these terms, Apple grants you a personal, non-exclusive license, under
  Apple's copyrights in this original Apple software (the "Apple Software"), to
@@ -26,13 +26,13 @@
  including but not limited to any patent rights that may be infringed by your
  derivative works or by other works in which the Apple Software may be
  incorporated.
- 
+
  The Apple Software is provided by Apple on an "AS IS" basis.  APPLE MAKES NO
  WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED
  WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
  PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR IN
  COMBINATION WITH YOUR PRODUCTS.
- 
+
  IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR
  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
@@ -40,56 +40,50 @@
  DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF
  CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF
  APPLE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- 
+
  Copyright (C) 2008-2010 Apple Inc. All Rights Reserved.
- 
+
  */
 
-#import "URLCacheAppDelegate.h"
-#import "URLCacheController.h"
+#import <UIKit/UIKit.h>
+#import "URLCacheConnection.h"
+#import "URLCacheAlert.h"
 
-@implementation URLCacheAppDelegate
+@interface URLCacheController : UIViewController <URLCacheConnectionDelegate, UIAlertViewDelegate> {
+	NSString *dataPath;
+	NSString *filePath;
+	NSDate *fileDate;
+	NSMutableArray *urlArray;
+	NSURLConnection *connection;
+	NSError *error;
 
-@synthesize window;
-@synthesize viewController;
+	/* outlets */
 
-
-- (void)applicationDidFinishLaunching:(UIApplication *)application {	
-	
-	viewController =
-	[[URLCacheController alloc] initWithNibName:@"MainView" bundle:[NSBundle mainBundle]];
-
-	/* Add the view controller's view as a subview of the window */
-	UIView *controllerView = [viewController view];
-	[window addSubview:controllerView];
-	[window makeKeyAndVisible];
+	UIImageView *imageView;
+	UIActivityIndicatorView *activityIndicator;
+	UILabel *statusField;
+	UILabel *dateField;
+	UILabel *infoField;
+	UIBarButtonItem *toolbarItem1;
+	UIBarButtonItem *toolbarItem2;
 }
 
+@property (nonatomic, copy) NSString *dataPath;
+@property (nonatomic, copy) NSString *filePath;
+@property (nonatomic, retain) NSDate *fileDate;
+@property (nonatomic, retain) NSMutableArray *urlArray;
+@property (nonatomic, retain) NSURLConnection *connection;
 
-- (void) applicationDidReceiveMemoryWarning:(UIApplication *)application
-{
-	/* In this method, the delegate tries to free up as much memory as possible.
-	 After the method returns (and the delegate returns from applicationWillTerminate:), 
-	 the application is terminated. */
-}
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, retain) IBOutlet UILabel *statusField;
+@property (nonatomic, retain) IBOutlet UILabel *dateField;
+@property (nonatomic, retain) IBOutlet UILabel *infoField;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *toolbarItem1;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *toolbarItem2;
 
-
-- (void) applicationWillTerminate:(UIApplication *)application
-{
-	/* save state as needed for next startup */
-	
-	/* To delete the disk cache directory when the application quits, uncomment 
-	 the following line. */
-	
-	// [[NSFileManager defaultManager] removeItemAtPath:viewController.dataPath error:nil];
-}
-
-
-- (void)dealloc {
-	[viewController release];
-	[window release];
-	[super dealloc];
-}
+- (IBAction) onDisplayImage:(id)sender;
+- (IBAction) onClearCache:(id)sender;
 
 @end
 

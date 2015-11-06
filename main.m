@@ -3,7 +3,7 @@
 File: main.m
 Abstract: Main entry point for the URLCache sample.
 
-Version: 1.0
+Version: 1.1
 
 Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple Inc.
 ("Apple") in consideration of your agreement to the following terms, and your
@@ -41,7 +41,7 @@ DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF
 CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF
 APPLE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Copyright (C) 2008 Apple Inc. All Rights Reserved.
+Copyright (C) 2008-2010 Apple Inc. All Rights Reserved.
 
 */
 

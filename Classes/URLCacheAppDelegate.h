@@ -3,7 +3,7 @@
  File: URLCacheAppDelegate.h
  Abstract: The application delegate for the URLCache sample.
  
- Version: 1.0
+ Version: 1.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple Inc.
  ("Apple") in consideration of your agreement to the following terms, and your
@@ -41,46 +41,21 @@
  CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF
  APPLE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2008 Apple Inc. All Rights Reserved.
+ Copyright (C) 2008-2010 Apple Inc. All Rights Reserved.
  
  */
 
 #import <UIKit/UIKit.h>
-#import	"URLCacheConnection.h"
 
-@interface URLCacheAppDelegate : NSObject <UIApplicationDelegate, URLCacheConnectionDelegate, UIAlertViewDelegate> {
-	NSString *dataPath;
-	NSString *filePath;
-	NSDate *fileDate;
-	NSMutableArray *urlArray;
-	NSError *error;
-	
-	IBOutlet UIWindow *window;
-	IBOutlet UIImageView *imageView;
-	IBOutlet UIActivityIndicatorView *activityIndicator;
-	IBOutlet UILabel *statusField;
-	IBOutlet UILabel *dateField;
-	IBOutlet UILabel *infoField;
-	IBOutlet UIBarButtonItem *toolbarItem1;
-	IBOutlet UIBarButtonItem *toolbarItem2;
+@class URLCacheController;
+
+@interface URLCacheAppDelegate : NSObject <UIApplicationDelegate> {
+	UIWindow *window;
+	URLCacheController *viewController;
 }
 
-@property (nonatomic, copy) NSString *dataPath;
-@property (nonatomic, copy) NSString *filePath;
-@property (nonatomic, retain) NSDate *fileDate;
-@property (nonatomic, retain) NSMutableArray *urlArray;
-
-@property (nonatomic, retain) UIWindow *window;
-@property (nonatomic, retain) UIImageView *imageView;
-@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
-@property (nonatomic, retain) UILabel *statusField;
-@property (nonatomic, retain) UILabel *dateField;
-@property (nonatomic, retain) UILabel *infoField;
-@property (nonatomic, retain) UIBarButtonItem *toolbarItem1;
-@property (nonatomic, retain) UIBarButtonItem *toolbarItem2;
-
-- (IBAction) onDisplayImage:(id)sender;
-- (IBAction) onClearCache:(id)sender;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) URLCacheController *viewController;
 
 @end
 
